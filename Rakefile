@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "fancy_cucumber_steps"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Fancy steps for creating models}
+    gem.description = %Q{Additional steps that add a bunch of functionality for creating models with one line}
     gem.email = "stephen@bendycode.com"
     gem.homepage = "http://github.com/bendycode/fancy_cucumber_steps"
     gem.authors = ["bendycode"]
