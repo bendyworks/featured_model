@@ -4,11 +4,11 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "fancy_cucumber_steps"
+    gem.name = "featured_model"
     gem.summary = %Q{Fancy steps for creating models}
     gem.description = %Q{Additional steps that add a bunch of functionality for creating models with one line}
-    gem.email = "stephen@bendycode.com"
-    gem.homepage = "http://github.com/bendycode/fancy_cucumber_steps"
+    gem.email = "stephen@bendyworks.com"
+    gem.homepage = "http://github.com/bendyworks/featured_model"
     gem.authors = ["bendycode"]
     gem.add_development_dependency "rspec"
     gem.add_development_dependency "cucumber"
@@ -54,7 +54,7 @@ Rake::RDocTask.new do |rdoc|
   end
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "fancy_cucumber_steps #{version}"
+  rdoc.title = "featured_model #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
