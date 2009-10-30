@@ -1,13 +1,15 @@
 h1. featured_model
 
+Warning! As reflected by the incredibly low version number, this is a new work in progress.  We are sharing it with you early and often in the hope you will find it useful and help us make it better quicker.
+
 We love using "fixjour":http://github.com/nakajima/fixjour in RSpec for creating test instances of our models.  featured_model allows us the same flexibility in Cucumber.
 
 For example, doing this in RSpec:
-<pre>@address = create_address(:city => "Madison", :state => "WI", :zip_code => "53705")
+<pre>@address = create_address(:city => "Madison", :state => "WI", :zip_code => "53703")
 @order = create_order(:status => "open", :order_id_amazon => "1234", :address => @address)</pre>
 
 can be done in Cucumber as:
-<pre>Given a new address with city "Madison" and state "WI"
+<pre>Given a new address with city "Madison" and state "WI" and zip code "53703"
 And a new order with status "open" and order id amazon "1234" for address with city "Madison"</pre>
 
 h2. Installation
@@ -66,6 +68,7 @@ listrophy
 bendycode
 coreyhaines
 arta
+randland
 
 h2. Copyright
 
