@@ -3,16 +3,12 @@ h1. featured_model
 We love using "fixjour":http://github.com/nakajima/fixjour in RSpec for creating test instances of our models.  featured_model allows us the same flexibility in Cucumber.
 
 For example, doing this in RSpec:
-<pre>
-  @address = create_address(:city => "Madison", :state => "WI", :zip_code => "53705")
-  @order = create_order(:status => "open", :order_id_amazon => "1234", :address => @address)
-</pre>
+<pre>@address = create_address(:city => "Madison", :state => "WI", :zip_code => "53705")
+@order = create_order(:status => "open", :order_id_amazon => "1234", :address => @address)</pre>
 
 can be done in Cucumber as:
-<pre>
-  Given a new address with city "Madison" and state "WI"
-  And a new order with status "open" and order id amazon "1234" for address with city "Madison"
-</pre>
+<pre>Given a new address with city "Madison" and state "WI"
+And a new order with status "open" and order id amazon "1234" for address with city "Madison"</pre>
 
 h2. Installation
 
@@ -23,9 +19,7 @@ h2. Usage
 Start your call off with @"a new <model-name>"@ where @<model-name>@ is a lower case version of the class name you want to build with fixjour.  Underscores can be replaced with spaces.
 
 For example:
-<pre>
-  Given a new address
-</pre>
+<pre>Given a new address</pre>
 
 | actual class name | @<model-name>@ |
 | Order | order |
@@ -34,14 +28,10 @@ For example:
 h3. Add attribute values
 
 Add the first attribute to your call using the @'with'@ operator:
-<pre>
-  Given a new address with city "Madison"
-</pre>
+<pre>Given a new address with city "Madison"</pre>
 
 Add as many additional attributes as you want using the @'and'@ operator:
-<pre>
-  Given a new address with city "Madison" and state "WI" and zip code "53703"
-</pre>
+<pre>Given a new address with city "Madison" and state "WI" and zip code "53703"</pre>
 
 h3. Add associations
 
@@ -50,18 +40,14 @@ We specify the associated object using attributes, instead of ActiveRecord id nu
 Use the @'for'@ operator to specify an association.  You must give the association enough attributes to find the correct, desired associated object in the database.
 
 In this example, we create a new order and setting its address to the address created on the line before.
-<pre>
-  Given a new address with city "Madison" and state "WI" and zip code "53703"
-  And a new order with status "open" and order id amazon "1234" for address with city "Madison"
-</pre>
+<pre>Given a new address with city "Madison" and state "WI" and zip code "53703"
+And a new order with status "open" and order id amazon "1234" for address with city "Madison"</pre>
 
 Note how we did not have to specify all the attributes for the associated object.  We just give the minimal attributes in order to find the correct object.  In this case, city "Madison" is enough since there is no other address in the database with city set to "Madison".  If your test has more addresses in play, then you'll need to specify more attributes.
 
 In other words, the example above can also be written as:
-<pre>
-  Given a new address with city "Madison" and state "WI" and zip code "53703"
-  And a new order with status "open" and order id amazon "1234" for address with city "Madison" and state "WI" and zip code "53703"
-</pre>
+<pre>Given a new address with city "Madison" and state "WI" and zip code "53703"
+And a new order with status "open" and order id amazon "1234" for address with city "Madison" and state "WI" and zip code "53703"</pre>
 
 h2. Note on Patches/Pull Requests
 
