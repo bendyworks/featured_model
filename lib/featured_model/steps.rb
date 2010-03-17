@@ -24,16 +24,11 @@ def create_dynamic_instance model_name, args
     when 'with' ; attributes[key.gsub(/ /, '_').to_sym] = value
     when 'for'
       associated_model, lookup_attribute = key.split(' with ').map {|x| x.gsub(/ /, '_')}
-      fk_name = associated_model
-      klass = Address
 
-      # TODO: Pick up these aliases dynamically from the ActiveRecord declarations.
-      # it should not live here
-      if associated_model == 'address'
-        fk_name = 'shipping_address'
-      else
-        klass = associated_model.classify.constantize
-      end
+      # TODO: add an "as ____" clause in order to allow differently named foreign keys.
+      fk_name = associated_model
+
+      klass = associated_model.classify.constantize
 
       attributes[fk_name + '_id'] = klass.first(:conditions => {lookup_attribute => value}).id
     else        ; raise('unknown join word "%s"' % parsing_state)

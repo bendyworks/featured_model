@@ -9,7 +9,7 @@ begin
     gem.description = %Q{Additional steps that add a bunch of functionality for creating models with one line}
     gem.email = "stephen@bendyworks.com"
     gem.homepage = "http://github.com/bendyworks/featured_model"
-    gem.authors = ["bendycode", 'listrophy', 'arta', 'randland']
+    gem.authors = ["bendycode", 'listrophy', 'arta', 'randland', 'jaym3s']
     gem.add_development_dependency "fixjour"
     # gem.add_development_dependency "cucumber"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
